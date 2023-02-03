@@ -4,7 +4,8 @@ import {
 	Degree, 
 	Sin, 
 	Cos, 
-	Tan
+	Tan,
+
 } from "epenbook-components";
 import { Image } from "react-bootstrap";
 

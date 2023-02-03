@@ -3,14 +3,14 @@ export const Metatdata =
 {
     _id:'0',
     bookTitle:'Epen Math 10',
+    coverPage:'../assets/cover.jpg',
+
     author:'',
-    cover:'cover.jpg',
     publisher:'',
     solution:'',
     description:'',
     samplePage:
     [
-        'cover.jpg',
         '1',
         '2',
         '3',
@@ -20,7 +20,7 @@ export const Metatdata =
         monthly: '',
         yearly:'',       
     },
-    
+    MaxTocPerPage:'',
     toc:
     [
         {
@@ -28,13 +28,14 @@ export const Metatdata =
         sections: [
             {
                 title:'Sine, Cosine, and Tangent for Right Triangles',
+                // contents are page number
                 content: [
                     '1',
                     '2',
                 ],
             },
             {
-                title:'Section 2',
+                title:'Chapter 1 section 2 title',
                 content: [
                     '3',
                     '4',
@@ -43,10 +44,10 @@ export const Metatdata =
         ]
         },
         {
-        title:'Chapter 2',
+        title:'Chapter 2 title',
         sections: [
             {
-                title:'Section 1',
+                title:'Chapter 2 section 1 title',
                 content: [
                     '5',
                     '6',
@@ -54,10 +55,9 @@ export const Metatdata =
 
             },
             {
-                title:'Section 2',
+                title:'Chapter 2 section 2 title',
                 content: [
-                    '7',
-                    '8',
+                    '7'
                 ],
 
             }
