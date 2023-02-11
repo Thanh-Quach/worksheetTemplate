@@ -4,7 +4,6 @@ import Banner from 'epenbook-components/assets/banner.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Metatdata } from './content/metadata';
 import { WorksheetsPageTemplate } from 'epenbook-components';
-import Page from './content/content';
 import { InputGroup, Form } from 'react-bootstrap';
 import { useState } from 'react';
 
@@ -12,7 +11,11 @@ import { useState } from 'react';
 const Worksheet = ()  => {
     const [inProgress, setInProgress] = useState('');
 
-
+    const PageNo = ({pageNumber}) => {
+        var Page = require(`./content/page${inProgress?inProgress:pageNumber}.jsx`).default
+        return <Page/>;
+    }
+    
     return(
     <div className={`${inProgress? 'mt-5':''} bg-dark worksheet`}>
         {!inProgress?Metatdata.content.map((pageNo, index)=>
@@ -27,7 +30,7 @@ const Worksheet = ()  => {
                     pageNumber={pageNo}
                     bannerSrc={Banner}
                 >
-                    <Page content={Metatdata.value}/>
+                    <PageNo pageNumber={pageNo}/>
                 </WorksheetsPageTemplate>
             </div>
         ):
@@ -35,7 +38,7 @@ const Worksheet = ()  => {
                     title={Metatdata.worksheetsTitle} 
                     pageNumber={inProgress}
                 >
-                    <Page content={Metatdata.value}/>
+                    <PageNo pageNumber={1}/>
                 </WorksheetsPageTemplate>
         }
         <div className='fixed-top w-100 bg-secondary d-flex align-items-center text-white noprint shadow'>
